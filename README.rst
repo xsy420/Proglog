@@ -1,7 +1,7 @@
 .. raw:: html
 
     <p align="center">
-    <img alt="Proglog Logo" title="Proglog Logo" src="https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/Proglog/master/logo.png" width="500">
+    <img alt="Proglog Logo" title="Proglog Logo" src="https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/Proglog/master/images/logo.png" width="500">
     <br /><br />
     </p>
 
@@ -28,7 +28,7 @@ For instance if your program 1 calls a program 2 and program 3 (possibly from ot
 .. raw:: html
 
     <p align="center">
-    <img src="https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/Proglog/master/docs/run_and_get_progress.png"    width="650">
+    <img src="https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/Proglog/master/images/run_and_get_progress.png"    width="650">
     </p>
 
 
@@ -62,7 +62,7 @@ Now when the library users run a program in the console, they will get a console
 .. raw:: html
 
     <p align="center">
-    <img src="https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/Proglog/master/docs/console_bar.png"    width="450">
+    <img src="https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/Proglog/master/images/console_bar.png"    width="450">
     </p>
 
 If the users run the routine inside a Jupyter/IPython notebook, they only need to write ``proglog.notebook()`` at the beginning of the notebook to obtain HTML progress bars:
@@ -78,7 +78,7 @@ If the users run the routine inside a Jupyter/IPython notebook, they only need t
 .. raw:: html
 
     <p align="center">
-    <img src="https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/Proglog/master/docs/notebook_bar.png"    width="450">
+    <img src="https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/Proglog/master/images/notebook_bar.png"    width="450">
     </p>
 
 
@@ -105,7 +105,7 @@ This allows to then display progress bars on the website such as these (see the 
 .. raw:: html
 
     <p align="center">
-    <img src="https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/Proglog/master/docs/website_bar.png"    width="450">
+    <img src="https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/Proglog/master/images/website_bar.png"    width="450">
     </p>
 
 
@@ -152,7 +152,7 @@ When writing libraries which all log progress and may depend on each other, simp
 .. raw:: html
 
     <p align="center">
-    <img src="https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/Proglog/master/docs/loggers_schema.png"    width="650">
+    <img src="https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/Proglog/master/images/loggers_schema.png"    width="650">
     </p>
 
 Note that this implies that not two libraries use the same variables or loop names, which can be avoided by attributing prefixes to these names:
