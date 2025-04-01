@@ -14,8 +14,8 @@ Infos
 
   pip install proglog
 
-**Github Page**
+**Github Page:** `<https://github.com/Edinburgh-Genome-Foundry/Proglog>`_
 
-`<https://github.com/Edinburgh-Genome-Foundry/Proglog>`_
+**License:** MIT
 
-**License:** MIT, Copyright Edinburgh Genome Foundry
+Copyright 2017 Edinburgh Genome Foundry, University of Edinburgh
