@@ -1,14 +1,12 @@
-import ez_setup
-
-ez_setup.use_setuptools()
-
 from setuptools import setup, find_packages
 
-exec(open("proglog/version.py").read())  # loads __version__
+version = {}
+with open("proglog/version.py") as fp:
+    exec(fp.read(), version)
 
 setup(
     name="proglog",
-    version=__version__,
+    version=version["__version__"],
     author="Zulko",
     description="Log and progress bar manager for console, notebooks, web...",
     long_description=open("pypi-readme.rst").read(),
