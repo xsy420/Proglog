@@ -197,7 +197,7 @@ License = MIT
 Proglog is an open-source software originally written at the `Edinburgh Genome Foundry
 <https://www.ed.ac.uk/biology/research/facilities/edinburgh-genome-foundry>`_ by `Zulko <https://github.com/Zulko>`_
 and `released on Github <https://github.com/Edinburgh-Genome-Foundry/DnaCauldron>`_ under
-the MIT license (Copyright 2017 Edinburgh Genome Foundry).
+the MIT license (Copyright 2017 Edinburgh Genome Foundry, University of Edinburgh).
 
 Proglog was not written by loggology experts, it *just works* with our projects and we use it a lot.
 Everyone is welcome to contribute if you find bugs or limitations !

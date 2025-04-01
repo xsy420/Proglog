@@ -18,13 +18,12 @@ def troncate_string(s, max_length=25):
 class ProgressLogger:
     """Generic class for progress loggers.
 
-    A progress logger contains a "state" dictionnary.
+    A progress logger contains a "state" dictionary.
 
     Parameters
     ----------
-
-    init_state
-      Dictionnary representing the initial state.
+    init_state : dict
+        Dictionary representing the initial state.
     """
 
     def __init__(self, init_state=None):
@@ -50,7 +49,7 @@ class ProgressLogger:
         """Execute something after the state has been updated by the given
         state elements.
 
-        This default callback does nothing, overwrite it by subclassing
+        This default callback does nothing, overwrite it by subclassing.
         """
         pass
 
@@ -79,11 +78,9 @@ class ProgressLogger:
 
         Examples
         --------
-
-        >>> for username in logger.iter(user=['tom', 'tim', 'lea']:
+        >>> for username in logger.iter(user=['tom', 'tim', 'lea']):
         >>>     # At every loop, logger.state['user'] is updated
-        >>>     print (username)
-
+        >>>     print(username)
         """
         for field, iterable in kw.items():
             for it in iterable:
@@ -98,24 +95,25 @@ class ProgressLogger:
 class ProgressBarLogger(ProgressLogger):
     """Generic class for progress loggers.
 
-    A progress logger contains a "state" dictionnary
+    A progress logger contains a "state" dictionary.
 
     Parameters
     ----------
-
-    init_state
-      Initial state of the logger
-
-    bars
-      Either None (will be initialized with no bar) or a list/tuple of bar
-      names (``['main', 'sub']``) which will be initialized with index -1 and
-      no total, or a dictionary (possibly ordered) of bars, of the form
-      ``{bar_1: {title: 'bar1', index: 2, total:23}, bar_2: {...}}``
-
-    ignored_bars
-      Either None (newly met bars will be added) or a list of blacklisted bar
-      names, or ``'all_others'`` to signify that all bar names not already in
-      ``self.bars`` will be ignored.
+    init_state : dict
+        Initial state of the logger.
+    bars : None, list, tuple, or dict, optional
+        Either None (will be initialized with no bar) or a list/tuple of bar
+        names (e.g., ['main', 'sub']) which will be initialized with index -1 and
+        no total, or a dictionary (possibly ordered) of bars, of the form
+        `{bar_1: {title: 'bar1', index: 2, total: 23}, bar_2: {...}}`.
+    ignored_bars : None, list of str, or 'all_others', optional
+        Either None (newly met bars will be added) or a list of blacklisted bar
+        names, or 'all_others' to signify that all bar names not already in
+        `self.bars` will be ignored.
+    logged_bars
+    min_time_interval : int or float
+        Time in seconds between progress bar updates.
+    ignore_bars_under : int
     """
 
     bar_indent = 2
@@ -174,6 +172,11 @@ class ProgressBarLogger(ProgressLogger):
 
     def iter_bar(self, bar_prefix="", **kw):
         """Iterate through a list while updating a state bar.
+
+        Parameters
+        ----------
+        bar_prefix : str
+            Bar prefix.
 
         Examples
         --------
@@ -267,31 +270,29 @@ class TqdmProgressBarLogger(ProgressBarLogger):
 
     Parameters
     ----------
-    init_state
-      Initial state of the logger
-
-    bars
-      Either None (will be initialized with no bar) or a list/tuple of bar
-      names (``['main', 'sub']``) which will be initialized with index -1 and
-      no total, or a dictionary (possibly ordered) of bars, of the form
-      ``{bar_1: {title: 'bar1', index: 2, total:23}, bar_2: {...}}``
-
-    ignored_bars
-      Either None (newly met bars will be added) or a list of blacklisted bar
-      names, or ``'all_others'`` to signify that all bar names not already in
-      ``self.bars`` will be ignored.
-
-
-    leave_bars
-
-    notebook
-      True will make the bars look nice (HTML) in the jupyter notebook. It is
-      advised to leave to 'default' as the default can be globally set from
-      inside a notebook with ``import proglog; proglog.notebook_mode()``.
-
-    print_messages
-      If True, every ``logger(message='something')`` will print a message in
-      the console / notebook
+    init_state : dict
+        Initial state of the logger.
+    bars : None, list, tuple, or dict, optional
+        Either None (will be initialized with no bar) or a list/tuple of bar
+        names (e.g., ['main', 'sub']) which will be initialized with index -1 and
+        no total, or a dictionary (possibly ordered) of bars, of the form
+        `{bar_1: {title: 'bar1', index: 2, total: 23}, bar_2: {...}}`.
+    leave_bars : bool, optional
+        Whether to leave the progress bars displayed upon completion.
+    ignored_bars : None, list of str, or 'all_others', optional
+        Either None (newly met bars will be added) or a list of blacklisted bar
+        names, or 'all_others' to signify that all bar names not already in
+        `self.bars` will be ignored.
+    notebook : bool, optional
+        True will make the bars look nice (HTML) in the Jupyter notebook. It is
+        advised to leave to 'default' as the default can be globally set from
+        inside a notebook with `import proglog; proglog.notebook_mode()`.
+    print_messages : bool
+        If True, every `logger(message='something')` will print a message in
+        the console or notebook.
+    min_time_interval : int or float
+        Time in seconds between progress bar updates.
+    ignore_bars_under : int
     """
 
     def __init__(
@@ -336,7 +337,7 @@ class TqdmProgressBarLogger(ProgressBarLogger):
         )
 
     def close_tqdm_bar(self, bar):
-        """Close and erase the tqdm bar"""
+        """Close and erase the tqdm bar."""
         self.tqdm_bars[bar].close()
         if not self.notebook:
             self.tqdm_bars[bar] = None
